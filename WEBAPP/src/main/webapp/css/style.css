@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+:root {
+    --bg-color: #222429;
+    --primary-bg-color: #333740;
+    --primary-color: #2c62f6;
+    --border-color: #494d59;
+    --text-color: #b1b8ca;
+    --text-active: #ffffff;
+    --transition-time: 0.4s;
+    --transition-timing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --border-radius: 1.1rem;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: "Poppins", sans-serif;
+    line-height: 1.4;
+}
+
+header {
+    background-color: #7378c5;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.search, select {
+    height: 4.2rem;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    background-color: var(--primary-bg-color);
+    border: 0.1rem solid var(--border-color);
+    transition: all var(--transition-time) var(--transition-timing);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 1.7rem;
+    padding: 0 1.8rem;
+}
+
+.search::placeholder, select::placeholder {
+    color: var(--text-color);
+}
+
+.search:focus, select:focus, .search:focus-visible {
+    outline: none;
+    border: 0.1rem solid var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(44, 98, 246, 0.4);
+}
+
+.search:hover, .search:focus,
+select:hover, select:focus {
+    color: var(--text-active);
+}
+
+option:hover {
+    background-color: var(--primary-bg-color);
+}
+
+.initial-select, .initial-select:hover {
+    color: #7378c5;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.movie {
+    background-color: var(--primary-bg-color);
+    border-radius: 3px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    margin: 1rem;
+    width: 300px;
+}
+
+.movie img {
+    width: 100%;
+}
+
+.movie-info {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+    font-size: 1.7rem;
+}
+
+.movie-info h3 {
+    margin: 0;
+}
+
+.movie-info span {
+    background-color: var(--bg-color);
+    border-radius: 3px;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+}
+
+.overview {
+    background-color: #fff;
+    padding: 2rem;
+    position: absolute;
+    max-height: 100%;
+    overflow: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+}
+
+.overview h3 {
+    margin-top: 0;
+    font-size: 1.6rem;
+}
+
+.overview h4 {
+    font-size: 1.4rem;
+}
+
+.movie:hover .overview {
+    transform: translateY(0);
+}
+
+.overview-info {
+    margin: 20px 0;
+    font-size: 2.0rem;
+}
+
